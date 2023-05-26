@@ -1,0 +1,189 @@
+/* Configurações gerais */
+*{
+    /* a margem, padding e boxsizing foram adicionadas para
+    remover a formatação padrão do navegador, isso é conhecido como
+    reset layout */
+    font-family: "Lato";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+#nav-bar {
+    width: 10000px;
+    height: 50px;
+    border: #45c1eb;
+    background-color: #45c1eb;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    
+}
+#home img{
+    
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    
+    
+    
+}
+/* configurar display:flex é o metodo mais moderno para criar layouts
+ele gera uma quebra de pagina, mantendo as DIVSpais uma do lado da outra*/
+body{
+    display: flex;
+    /* Flex-wrap vai fazer com que o elemento não
+    exceda o limite definido, também faz com que
+     ele fique responsivo quando for 
+    para um celular por exemplo*/
+    flex-wrap: wrap;
+}
+
+/* -----Apresentação------- */
+#about-container{
+    align-items: center;
+    /* este flex é para definir que a área de about container será
+    maior que a área data*/
+    flex: 0.4;
+    /* rem é uma unidade de medida relativa, normalmente a página tem 
+    16px de medida, rem serve para operar com isso, mas de forma relativa, 
+    sendo 2rem superior e 4rem lateral, a nível de informação
+    rem é uma das unidades de medidda mais usadas no CSS. */
+    padding: 2rem 4rem;
+    border: 4px solid #45c1eb;
+    border-radius: 12px;
+
+}
+
+/* Logo */
+#brand{
+    display: block;
+    /* Align-center é uma regra do display flex, pra centralizar o
+    conteúdo de forma mais fácil*/
+    align-items: center;
+}
+
+/* Para configurar atributos de uma imagem, basta buscar a div 
+que ela está (se estiver) e adicionar img */
+#brand img{
+    height: 300px;
+    
+
+}
+#brandcontent{
+    text-transform: uppercase;
+    color: #45c1eb;
+    font-size: 1.5rem;
+    text-align: center;
+    
+}
+
+#description{
+    color: #076c8d ;
+    text-align: center;
+    /* max width é para definir que os caracteres podem ocupar 
+    até x espaço determinado no valor.*/
+    max-width: 500px;
+    /* line height aumenta o tamanho da linha*/
+    line-height: 1.6rem;;
+    
+}
+
+/* --------Dados de acesso-------- */
+#data-container{
+    flex: 1;
+    background-image: url(../img/Pattern.jpg);
+    background-size: cover;
+    color: #fff;
+    border-radius: 15px;
+
+}
+
+#data-inner{
+    margin: 3rem;
+    padding: 3rem;
+    border: 2px solid #fff;
+    text-align: center;
+    display: flex;
+    /* Outra propriedade do flex é o flex-direction,
+    com o valor colum por exemplo, */
+    flex-direction: column;
+    align-items: center;
+}
+#data-inner h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+}
+#data-entrance{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+#name{
+    display: flex;
+    /* Gap é para dar um respiro entre os campos*/
+    gap: 0.5rem;
+}
+#data-entrance input{
+    padding: 0.8rem 0.6rem;
+    border: none;
+    border-radius: 12px;
+}
+/* esta alteração é para deixar o campo de e-mail 
+sempre em uma linha só*/
+#email{
+    min-width: 100%;
+}
+/* selecionando a alteração somente para um input específico
+mesmo sem atribuir id ou class, basta selecionar o ID 
+que ele está incluído seguido de input e dentro de cochetes
+[] coloca o tipo, que irá alterar certinho ele! */
+#data-entrance input[type="submit"]{
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    /*o valor em cursor é referente a opção de clique do mouse
+    ficar disponível quando o mouse passar por cima*/
+    cursor:pointer;
+    /*Transition serve para hover nessa situação, pois irá adicionar
+    um tempinho para poder transicionar para a alteração de cor*/
+    transition: 0.4s;
+}
+/* Hover é umm evento no HTML para alterar a aparencia do campo
+para quando o mouse passar por cima, a cor mudar e realçar que
+alí existe uma interação, IMPORTANTE :hover precisa estar
+grudado em cochetes, senão não irá funcionar*/
+#data-entrance input[type="submit"]:hover {
+    background-color: #fff;
+    color: #076c8d;
+    
+}
+#login{
+    font-size: 1.5rem;
+}
+#clique{
+    color: #fff;
+    font-weight: bold;
+    
+}
+
+/* Responsividade no css*/
+/*
+@media (max-width: 450px){
+    body{
+        flex-direction: column;
+    }
+    #about-container{
+        padding: 2rem;
+        padding-bottom: 0;
+    }
+    
+}*/
